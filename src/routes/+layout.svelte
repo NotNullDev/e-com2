@@ -18,12 +18,17 @@
 
 <div class="min-h-screen h-full bg-base-200 overflow-hidden">
 	<header class="flex justify-between shadow-base-100 p-4 items-center shadow">
-		<a href="/">SvelteKit Lazy starter</a>
-		{#if !user}
-			<button class="btn btn-primary" on:click={login}>login with github</button>
-		{:else}
-			<button class="btn btn-primary" on:click={logout}>logout</button>
-		{/if}
+		<div class="container mx-auto flex justify-between items-center">
+			<a href="/">e-com 2</a>
+			{#if !user}
+				<button class="btn btn-primary" on:click={login}>login</button>
+			{:else}
+				<div class="flex gap-2 items-center">
+					<a class="btn btn-ghost" href="/profile">profile</a>
+					<button class="btn btn-primary" on:click={logout}>logout</button>
+				</div>
+			{/if}
+		</div>
 	</header>
 	<slot />
 </div>

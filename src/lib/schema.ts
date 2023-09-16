@@ -60,7 +60,14 @@ export const products = pgTable('products', {
 	id: serial('id').notNull().primaryKey(),
 	title: text('title').notNull(),
 	description: text('description').notNull(),
-	price: bigint('price', { mode: 'number' }).notNull()
+	price: bigint('price', { mode: 'number' }).notNull(),
+	categories: text('categories').array(),
+	seller: text('seller').references(() => users.id),
+	previewImage: text('previewImage'),
+	images: text('images').array(),
+	stock: integer('stock').notNull(),
+	location: text('location'),
+	discountPercent: integer('discount')
 });
 
 export type Product = InferSelectModel<typeof products>;
