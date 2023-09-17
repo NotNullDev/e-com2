@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn {
-	@apply btn-sm;
+html {
+    font-size: 14px;
 }
 
-.input {
-	@apply input-sm;
-}
+/*.btn {*/
+/*	@apply btn-sm;*/
+/*}*/
 
-.app-card {
-	@apply bg-base-100 p-6 rounded-md shadow;
-}
+/*.input {*/
+/*	@apply input-sm;*/
+/*}*/
+
+/*.app-card {*/
+/*	@apply bg-base-100 p-6 rounded-md shadow;*/
+/*}*/

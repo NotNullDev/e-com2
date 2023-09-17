@@ -1,11 +1,18 @@
 /** @type {import('tailwindcss').Config} */
 export default {
-	content: ['./src/**/*.{html,js,svelte,ts}'],
+	content: [
+		'./src/**/*.{html,js,svelte,ts}',
+		'./node_modules/stwui/**/*.{svelte,js,ts,html}'
+
+	],
 	theme: {
 		extend: {}
 	},
-	daisyui: {
-		themes: ['night']
+	stwui: {
+		themes: ['light', 'dark']
 	},
-	plugins: [require('daisyui')]
+	plugins: [
+		require('@tailwindcss/forms'),
+		require('stwui/plugin')
+	]
 };

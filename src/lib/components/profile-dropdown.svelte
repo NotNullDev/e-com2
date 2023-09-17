@@ -64,22 +64,22 @@
 
 {#if $open}
 	<div
-		class="bg-base-100 py-2 px-4 rounded-md flex flex-col items-center justify-center"
+		class="bg-base-100 py-2 px-4 rounded-md flex flex-col items-center justify-center border"
 		use:melt={$menu}
 		transition:fly={{ duration: 150, y: -10 }}
 	>
 		<a href="/profile" class="item" use:melt={$item}>Profile</a>
 		<div class="separator" use:melt={$separator} />
 		<button on:click={logout} class="item" use:melt={$item}>Logout</button>
-		<div use:melt={$arrow} />
+		<div use:melt={$arrow} class="border" />
 	</div>
 {/if}
 
 <style lang="postcss">
-	.item {
-		@apply p-1 px-4 focus-within:bg-base-300 cursor-pointer min-w-[100px] text-center rounded-md;
-	}
-	.separator {
-		@apply bg-base-200/60 h-[1px] w-full rounded-md my-1;
-	}
+	/*.item {*/
+	/*	@apply p-1 px-4 focus-within:bg-base-300 cursor-pointer min-w-[100px] text-center rounded-md;*/
+	/*}*/
+	/*.separator {*/
+	/*	@apply bg-base-200/60 h-[1px] w-full rounded-md my-1;*/
+	/*}*/
 </style>

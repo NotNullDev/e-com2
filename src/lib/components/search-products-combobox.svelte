@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { createCombobox, melt } from '@melt-ui/svelte';
-	import { Check, ChevronDown, ChevronUp } from 'lucide-svelte';
+	import { Check, ChevronDown, ChevronUp, SearchIcon } from 'lucide-svelte';
 	import { fly } from 'svelte/transition';
 
 	const {
@@ -81,17 +81,11 @@
 		: mangas;
 </script>
 
-<div class="flex flex-col gap-1">
-	<div class="relative">
-		<input use:melt={$input} class="input input-bordered" placeholder="Find product" />
-		<div class="absolute right-2 top-1/2 z-10 -translate-y-1/2 text-magnum-900">
-			{#if $open}
-				<ChevronUp class="square-4" />
-			{:else}
-				<ChevronDown class="square-4" />
-			{/if}
-		</div>
-	</div>
+<div class="form-control">
+  <div class="input-group">
+    <input use:melt={$input} class="input input-bordered" placeholder="Find product" />
+    <SearchIcon class="btn btn-square btn-ghost" />
+  </div>
 </div>
 {#if $open}
 	<ul
@@ -135,8 +129,8 @@
 {/if}
 
 <style lang="postcss">
-	.check {
-		@apply absolute left-2 top-1/2 text-slate-200;
-		translate: 0 calc(-50% + 1px);
-	}
+	/*.check {*/
+	/*	@apply absolute left-2 top-1/2 text-slate-200;*/
+	/*	translate: 0 calc(-50% + 1px);*/
+	/*}*/
 </style>

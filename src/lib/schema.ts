@@ -67,7 +67,8 @@ export const products = pgTable('products', {
 	images: text('images').array(),
 	stock: integer('stock').notNull(),
 	location: text('location'),
-	discountPercent: integer('discount')
+	discountPercent: integer('discount'),
+	condition: text('condition').notNull().default('new'),
 });
 
 export type Product = InferSelectModel<typeof products>;
